@@ -56,39 +56,76 @@
         };
     };
 
+    macros {
+        ac: ac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RC(A)>;
+            label = "AC";
+        };
+
+        av: av {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>;
+            label = "AV";
+        };
+
+        pd: pd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp U &kp B &kp L &kp I &kp M &kp E &kp I &kp N &kp C &kp A &kp N &kp T &kp A &kp T &kp I &kp O &kp N &kp S>;
+            label = "PD";
+        };
+
+        sa: sa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp E &kp L &kp E &kp C &kp T &kp SPACE &kp STAR &kp SPACE &kp F &kp R &kp O &kp M &kp SPACE>;
+            label = "SA";
+        };
+
+        cf5: cf5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RC(F5)>;
+            label = "CF5";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         Base {
             label = "Base";
             bindings = <
-&kp ESC         &kp N1   &kp N2  &kp N3          &kp N4        &kp N5            &kp N6          &kp N7           &kp N8     &kp N9   &kp N0       &kp BSPC
-&kp TAB         &kp Q    &kp W   &kp E           &kp R         &kp T             &kp Y           &kp U            &kp I      &kp O    &kp P        &kp BACKSLASH
-&kp LEFT_SHIFT  &kp A    &kp S   &kp D           &kp F         &kp G             &kp H           &kp J            &kp K      &kp L    &kp SEMI     &kp APOS
-&kp LCTRL       &lt 3 Z  &kp X   &kp C           &kp V         &kp B             &kp N           &kp M            &kp COMMA  &kp DOT  &lt 3 SLASH  &kp DELETE
-                                 &kp LEFT_ARROW  &kp UP_ARROW  &lt 1 LEFT_WIN    &lt 2 ENTER     &kp RIGHT_ARROW
-                                                 &kp LEFT_ALT  &kp SPACE         &kp DOWN_ARROW
+&kp ESC         &kp N1   &kp N2  &kp N3    &kp N4        &kp N5           &kp N6         &kp N7       &kp N8     &kp N9   &kp N0       &kp BSPC
+&kp TAB         &kp Q    &kp W   &kp F     &kp P         &kp B            &kp J          &kp L        &kp U      &kp Y    &kp SQT      &kp RC(ENTER)
+&kp LEFT_SHIFT  &kp A    &kp R   &kp S     &kp T         &kp G            &kp M          &kp N        &kp E      &kp I    &kp O        &kp RIGHT_SHIFT
+&kp LCTRL       &lt 3 Z  &kp X   &kp C     &kp D         &kp V            &kp K          &kp H        &kp COMMA  &kp DOT  &lt 3 SLASH  &kp RCTRL
+                                 &kp SEMI  &lt 1 ENTER   &kp DELETE       &kp BACKSPACE  &lt 2 SPACE
+                                           &kp LEFT_ALT  &kp BACKSLASH    &kp EQUAL
             >;
         };
 
         NuFu {
             label = "Numeral/Function";
             bindings = <
-&kp TILDE         &kp EXCLAMATION  &kp HASH      &kp DOLLAR    &kp DOLLAR       &kp PERCENT          &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE
-&kp GRAVE         &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4     &kp LBKT             &kp RBKT         &kp F1         &kp F2        &kp F3                &kp F4                 &kp DEL
-&kp LEFT_CONTROL  &kp NUMBER_5     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8     &soft_off            &kp BSLH         &kp F5         &kp F6        &kp F7                &kp F8                 &kp PAGE_UP
-&kp LSHFT         &kp NUMBER_9     &kp NUMBER_0  &kp MINUS     &kp EQUAL        &ext_power EP_TOG    &rgb_ug RGB_TOG  &kp F9         &kp F10       &kp F11               &kp F12                &kp PAGE_DOWN
-                                                 &kp LEFT_WIN  &kp SPACE        &none                &kp ENTER        &kp BACKSPACE
-                                                               &rgb_ug RGB_BRI  &rgb_ug RGB_BRD      &rgb_ug RGB_EFF
+&kp TILDE  &kp EXCLAMATION  &kp N7        &kp N8        &kp N9           &kp BACKSLASH        &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &pd
+&trans     &trans           &kp NUMBER_4  &kp N5        &kp NUMBER_6     &kp LBKT             &kp PAGE_UP      &kp F1         &kp F2        &kp F3                &kp F4                 &sa
+&trans     &trans           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &soft_off            &kp PAGE_DOWN    &kp F5         &kp F6        &kp F7                &kp F8                 &kp PAGE_UP
+&trans     &trans           &trans        &kp N0        &kp EQUAL        &cf5                 &rgb_ug RGB_TOG  &kp F9         &kp F10       &kp F11               &kp F12                &kp PAGE_DOWN
+                                          &kp LEFT_WIN  &kp RET          &ext_power EP_TOG    &kp SPACE        &kp BACKSPACE
+                                                        &rgb_ug RGB_BRI  &rgb_ug RGB_BRD      &rgb_ug RGB_EFF
             >;
         };
 
         Symbol {
             label = "Symbol";
             bindings = <
-&kp TILDE  &kp AMPS   &kp STAR   &trans    &kp PLUS  &trans      &kp LBRC        &kp RBRC  &trans     &kp PIPE  &kp MINUS  &kp DLLR
-&kp PRCNT  &kp CARET  &kp EQUAL  &trans    &kp LPAR  &kp RPAR    &kp DQT         &kp APOS  &kp UNDER  &kp EXCL  &kp AT     &kp HASH
-&kp GRAVE  &trans     &kp LBKT   &kp RBKT  &trans    &kp BSLH    &studio_unlock  &trans    &trans     &trans    &trans
+&kp INSERT  &kp AMPS   &kp C_MENU      &trans           &kp PLUS              &trans                   &kp LBRC        &kp RBRC  &trans          &kp PIPE   &kp MINUS  &kp DLLR
+&kp PRCNT   &kp CARET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LPAR              &kp RPAR                 &kp DQT         &kp APOS  &kp UP_ARROW    &kp EXCL   &kp HOME   &kp HASH
+&kp GRAVE   &trans     &kp LBKT        &kp RBKT         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &studio_unlock  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp END
             >;
         };
 
@@ -113,9 +150,9 @@
         Pointer {
             label = "Pointer";
             bindings = <
-&trans     &trans     &trans  &trans    &trans     &trans       &trans     &trans     &trans     &trans     &kp LGUI   &kp LALT
-&kp LCTRL  &kp LSHFT  &trans  &trans    &kp RSHFT  &kp RCTRL    &kp RALT   &kp RGUI   &trans     &mo SCR    &mo SNI    &trans
-&trans     &trans     &trans  &tog SNI  &tog SCR   &trans       &mkp RCLK  &mkp LCLK  &mkp MCLK  &mkp MCLK  &mkp LCLK
+&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &kp LGUI   &kp LALT
+&kp LCTRL  &kp LSHFT  &mkp LCLK  &mkp RCLK  &kp RSHFT  &kp RCTRL    &kp RALT   &kp RGUI   &trans     &mo SCR    &mo SNI    &trans
+&trans     &trans     &mkp LCLK  &tog SNI   &tog SCR   &trans       &mkp RCLK  &mkp LCLK  &mkp MCLK  &mkp MCLK  &mkp LCLK
             >;
         };
 
