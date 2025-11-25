@@ -99,12 +99,12 @@
         Base {
             label = "Base";
             bindings = <
-&kp ESC         &kp N1   &kp N2  &kp N3    &kp N4        &kp N5           &kp N6         &kp N7       &kp N8     &kp N9   &kp N0       &kp BSPC
-&kp TAB         &kp Q    &kp W   &kp F     &kp P         &kp B            &kp J          &kp L        &kp U      &kp Y    &kp SQT      &kp RC(ENTER)
-&kp LEFT_SHIFT  &kp A    &kp R   &kp S     &kp T         &kp G            &kp M          &kp N        &kp E      &kp I    &kp O        &kp RIGHT_SHIFT
-&kp LCTRL       &lt 3 Z  &kp X   &kp C     &kp D         &kp V            &kp K          &kp H        &kp COMMA  &kp DOT  &lt 3 SLASH  &kp RCTRL
-                                 &kp SEMI  &lt 1 ENTER   &kp DELETE       &kp BACKSPACE  &lt 2 SPACE
-                                           &kp LEFT_ALT  &kp BACKSLASH    &kp EQUAL
+&kp ESC         &kp N1   &kp N2  &kp N3    &kp N4        &kp N5           &kp N6                &kp N7       &kp N8     &kp N9   &kp N0       &kp BSPC
+&kp TAB         &kp Q    &kp W   &kp F     &kp P         &kp B            &kp J                 &kp L        &kp U      &kp Y    &kp SQT      &kp RC(EQUAL)
+&kp LEFT_SHIFT  &kp A    &kp R   &kp S     &kp T         &kp G            &kp M                 &kp N        &kp E      &kp I    &kp O        &kp RIGHT_SHIFT
+&kp LCTRL       &lt 6 Z  &kp X   &kp C     &kp D         &kp V            &kp K                 &kp H        &kp COMMA  &kp DOT  &lt 3 SLASH  &kp RCTRL
+                                 &kp SEMI  &lt 1 ENTER   &kp DELETE       &kp BACKSPACE         &lt 2 SPACE
+                                           &kp LEFT_ALT  &kp BACKSLASH    &kp NON_US_BACKSLASH
             >;
         };
 
@@ -112,10 +112,10 @@
             label = "Numeral/Function";
             bindings = <
 &kp TILDE  &kp EXCLAMATION  &kp N7        &kp N8        &kp N9           &kp BACKSLASH        &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &pd
-&trans     &trans           &kp NUMBER_4  &kp N5        &kp NUMBER_6     &kp LBKT             &kp PAGE_UP      &kp F1         &kp F2        &kp F3                &kp F4                 &sa
-&trans     &trans           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &soft_off            &kp PAGE_DOWN    &kp F5         &kp F6        &kp F7                &kp F8                 &kp PAGE_UP
+&ac        &kp MINUS        &kp NUMBER_4  &kp N5        &kp NUMBER_6     &kp LBKT             &kp PAGE_UP      &kp F1         &kp F2        &kp F3                &kp F4                 &sa
+&av        &trans           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &soft_off            &kp PAGE_DOWN    &kp F5         &kp F6        &kp F7                &kp F8                 &kp PAGE_UP
 &trans     &trans           &trans        &kp N0        &kp EQUAL        &cf5                 &rgb_ug RGB_TOG  &kp F9         &kp F10       &kp F11               &kp F12                &kp PAGE_DOWN
-                                          &kp LEFT_WIN  &kp RET          &ext_power EP_TOG    &kp SPACE        &kp BACKSPACE
+                                          &kp LEFT_WIN  &kp RET          &ext_power EP_TOG    &kp BACKSPACE    &kp SPACE
                                                         &rgb_ug RGB_BRI  &rgb_ug RGB_BRD      &rgb_ug RGB_EFF
             >;
         };
